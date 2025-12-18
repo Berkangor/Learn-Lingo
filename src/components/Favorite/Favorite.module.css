@@ -1,0 +1,19 @@
+.heartIcon {
+    margin-left: 64px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.heartColor {
+    fill: var(--primary-color);
+    stroke: var(--primary-color);
+    filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.2));
+}
+
+.heartIcon:hover {
+    transform: scale(1.1);
+    opacity: 0.9;
+}
+
+.heartBtn:hover {
+    background-color: transparent;
+}

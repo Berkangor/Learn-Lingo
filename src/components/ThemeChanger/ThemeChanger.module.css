@@ -1,0 +1,68 @@
+.themeContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    gap: 3px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    padding: 10px 0px;
+    background-color: #ffffff68;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(90, 12, 12, 0.2);
+    transition: left 0.3s ease-in-out;
+
+}
+
+.textTheme {
+    font-size: 15px;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+}
+
+.colorButtons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.colorButtons button:nth-child(1) {
+    background-color: #f4c550;
+}
+
+.colorButtons button:nth-child(2) {
+    background-color: #9fbaae;
+}
+
+.colorButtons button:nth-child(3) {
+    background-color: #9fb7ce;
+}
+
+.colorButtons button:nth-child(4) {
+    background-color: #e0a39a;
+}
+
+.colorButtons button:nth-child(5) {
+    background-color: #f0aa8d;
+}
+
+.colorButtons button {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.colorButtons button:hover {
+    transform: scale(1.1);
+}
+
+.closeBtn:hover {
+    transform: scale(1.1);
+    opacity: 0.9;
+    background-color: transparent;
+}

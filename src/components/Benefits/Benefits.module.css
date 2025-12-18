@@ -1,0 +1,38 @@
+.benefitsContainer {
+    margin-top: 24px;
+    margin-bottom: 32px;
+}
+
+.list {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 100px;
+    border: 1.50px dashed var(--primary-color);
+    border-radius: 30px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+}
+
+.item {
+    display: flex;
+
+}
+
+.titleBenefits {
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 114%;
+    letter-spacing: -0.02em;
+    margin-right: 16px;
+}
+
+.descrBenefits {
+    font-size: 14px;
+    line-height: 129%;
+    letter-spacing: -0.02em;
+    max-width: 90px;
+    color: rgba(18, 20, 23, 0.7);
+}

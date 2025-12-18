@@ -1,0 +1,26 @@
+.teachersPageContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 96px 128px;
+    background-color: #f8f8f8;
+}
+
+.btnMore {
+    margin-top: 64px;
+    border-radius: 12px;
+    padding: 16px;
+    width: 183px;
+    background-color: var(--primary-color);
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 156%;
+}
+
+.noMore {
+    margin-top: 100px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 156%;
+
+}

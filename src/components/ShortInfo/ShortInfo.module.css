@@ -1,0 +1,36 @@
+.wrapperShortInfo {
+    display: flex;
+    position: absolute;
+    right: 24px;
+    gap: 16px;
+    align-items: center;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.line {
+    padding: 0;
+    margin: 0;
+    width: 2px;
+    height: 24px;
+    border: none;
+    background-color: rgba(18, 20, 23, 0.2);
+}
+
+.starIcon {
+    fill: var(--primary-color);
+    stroke: none;
+}
+
+
+.accent {
+    color: #38cd3e;
+}

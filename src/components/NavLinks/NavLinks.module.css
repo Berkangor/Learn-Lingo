@@ -1,0 +1,34 @@
+.navLogo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+.logoText {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 120%;
+    letter-spacing: -0.02em;
+}
+
+.nav {
+    display: flex;
+    gap: 28px;
+}
+
+.activeLink {
+    text-decoration: underline;
+    color: var(--primary-color);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.link {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.link:hover,
+.activeLink:hover {
+    transform: scale(1.1);
+    opacity: 0.9;
+}

@@ -1,0 +1,19 @@
+.levelList {
+    display: flex;
+    gap: 8px;
+}
+
+.levelList li:nth-child(1) {
+    background-color: var(--primary-color);
+    border: none;
+}
+
+.levelItem {
+    border: 1px solid var(--main);
+    border-radius: 35px;
+    padding: 8px 12px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 114%;
+    margin-top: 32px;
+}

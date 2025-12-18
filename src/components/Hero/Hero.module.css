@@ -1,0 +1,74 @@
+.heroContainer {
+    gap: 24px;
+    max-height: 530px;
+}
+
+.firstContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    border-radius: 30px;
+    width: 100%;
+    height: 530px;
+    background-color: #f8f8f8;
+    padding-left: 60px;
+}
+
+.title {
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 117%;
+    letter-spacing: -0.02em;
+    margin-bottom: 32px;
+    max-width: 550px;
+}
+
+.titleAccent {
+    font-style: italic;
+    font-weight: 400;
+    background-color: var(--accent-color);
+    border-radius: 8px;
+    width: 195px;
+    height: 40px;
+}
+
+.descr {
+    font-size: 16px;
+    line-height: 137%;
+    letter-spacing: -0.02em;
+    margin-bottom: 65px;
+    max-width: 470px;
+}
+
+.btn {
+    border-radius: 12px;
+    padding: 16px 88px;
+    background-color: var(--primary-color);
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 156%;
+}
+
+.secondContainer {
+    display: flex;
+    align-items: center;
+
+    flex-direction: column;
+    border-radius: 30px;
+    min-width: 568px;
+    height: 530px;
+    background-color: var(--accent-color);
+    position: relative;
+}
+
+.womanImage {
+    margin-top: 80px;
+    width: 339px;
+    height: 339px;
+}
+
+.iMacImage {
+    position: absolute;
+    bottom: 0;
+}

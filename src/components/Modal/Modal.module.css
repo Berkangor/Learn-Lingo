@@ -1,0 +1,49 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+
+}
+
+.modal {
+    background: white;
+    padding: 64px;
+    border-radius: 30px;
+    width: 565px;
+    position: relative;
+    max-height: 90vh;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-color) #ffffff;
+}
+
+.modal::-webkit-scrollbar {
+    width: 6px;
+}
+
+.modal::-webkit-scrollbar-track {
+    background-color: white;
+}
+
+.modal::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+    min-height: 40px;
+}
+
+.closeButton {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    stroke: var(--main);
+}
+
+.closeButton:hover {
+    background-color: transparent;
+}
