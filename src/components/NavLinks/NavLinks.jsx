@@ -10,7 +10,7 @@ export default function NavLinks() {
     <>
       <nav>
         <NavLink to="/" className={css.navLogo}>
-          <img src={WomanLogo} className={css.logo} alt="Logo" />
+         <img src={WomanLogo} className={css.logo} alt="Logo" />
           <p className={css.logoText}>LearnLingo</p>
         </NavLink>
       </nav>

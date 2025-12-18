@@ -1,34 +1,81 @@
-.navLogo {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 8px;
-}
-
-.logoText {
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 120%;
-    letter-spacing: -0.02em;
-}
-
+/* Ana konteynerleri hizalamak için genel yapı */
 .nav {
     display: flex;
     gap: 28px;
+    align-items: center;
 }
 
+/* Logo ve Metin Grubu */
+.navLogo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.navLogo:hover {
+    opacity: 0.8;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+}
+
+.logoText {
+    font-size: 20px;
+    font-weight: 600;
+    color: #121417;
+    margin: 0;
+    letter-spacing: -0.02em;
+}
+
+/* Navigasyon Linkleri */
+.link,
 .activeLink {
-    text-decoration: underline;
-    color: var(--primary-color);
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.25;
+    color: #121417;
+    position: relative;
+    transition: color 0.3s ease;
 }
 
-.link {
-    transition: transform 0.3s ease, opacity 0.3s ease;
+/* Hover Efekti */
+.link:hover {
+    color: #f4c550;
+    /* LearnLingo temasına uygun sarı tonu */
 }
 
-.link:hover,
-.activeLink:hover {
-    transform: scale(1.1);
-    opacity: 0.9;
+/* Aktif Link Durumu */
+.activeLink {
+    color: #f4c550;
+    font-weight: 500;
+}
+
+/* Aktif linkin altına küçük bir nokta veya çizgi eklemek istersen: */
+.activeLink::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 8px;
+    height: 8px;
+    background-color: #f4c550;
+    border-radius: 50%;
+}
+
+/* Responsive Ayarlar */
+@media (max-width: 768px) {
+    .nav {
+        gap: 15px;
+    }
+
+    .logoText {
+        display: none;
+        /* Mobilde sadece ikon kalsın dersen */
+    }
 }

@@ -1,11 +1,9 @@
-// src/components/Context/AuthContext.jsx
 import { createContext, useContext, useEffect, useState } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../../api/firebase";
 
 const AuthContext = createContext(null);
 
-// ✅ Component: büyük harfle başlıyor, export function
 export function AuthProvider({ children }) {
   const [currentUser, setCurrentUser] = useState(null);
   const [loading, setLoading] = useState(true);

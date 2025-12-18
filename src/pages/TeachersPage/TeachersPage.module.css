@@ -1,26 +1,64 @@
 .teachersPageContainer {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding: 96px 128px;
+    padding-top: 40px;
+    padding-bottom: 60px;
+    min-height: 100vh;
     background-color: #f8f8f8;
+    /* Hafif gri arka plan kartları öne çıkarır */
 }
 
+/* Filtreler ve Liste arasındaki boşluk */
+.teachersPageContainer> :global(.filters-wrapper) {
+    margin-bottom: 32px;
+}
+
+/* Daha Fazla Yükle Butonu */
 .btnMore {
-    margin-top: 64px;
-    border-radius: 12px;
-    padding: 16px;
-    width: 183px;
-    background-color: var(--primary-color);
-    font-weight: 700;
+    display: block;
+    margin: 40px auto 0 auto;
+    padding: 16px 48px;
     font-size: 18px;
-    line-height: 156%;
+    font-weight: 700;
+    line-height: 1.5;
+    color: #121417;
+    background-color: #f4c550;
+    /* LearnLingo ana rengi */
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-.noMore {
-    margin-top: 100px;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 156%;
+.btnMore:hover {
+    background-color: #ffdc86;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(244, 197, 80, 0.3);
+}
 
+.btnMore:active {
+    transform: translateY(0);
+}
+
+/* Liste sonu uyarısı */
+.noMore {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 16px;
+    color: #8a8a89;
+    font-style: italic;
+}
+
+/* Responsive Düzenlemeler */
+@media (max-width: 768px) {
+    .teachersPageContainer {
+        padding-top: 20px;
+        padding-bottom: 40px;
+    }
+
+    .btnMore {
+        width: 100%;
+        /* Mobilde butonu tam genişlik yap */
+        padding: 14px;
+    }
 }

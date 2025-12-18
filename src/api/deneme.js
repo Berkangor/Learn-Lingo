@@ -1,4 +1,3 @@
-// src/api/deneme.js
 export const myTeacher = {
   id: "berkan-teacher",
   name: "Berkan",
@@ -19,7 +18,7 @@ export const myTeacher = {
   reviews: [],
   price_per_hour: 25,
   lessons_done: 120,
-  avatar_url: "/image.png", // şimdilik placeholder da koyabilirsin
+  avatar_url: "/image.png", 
   lesson_info:
     "Konuşma pratiği ve günlük kullanım odaklı dersler.",
   conditions: [

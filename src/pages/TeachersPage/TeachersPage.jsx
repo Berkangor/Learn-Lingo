@@ -8,7 +8,7 @@ import useTeachers from "../../api/useTeachers";
 const teachersPerPage = 4;
 
 const TeachersPage = () => {
-  const teachers = useTeachers(); // 🔹 Burada artık || [] YOK
+  const teachers = useTeachers(); 
 
   const [filters, setFilters] = useState({
     selectedLanguage: "All",
@@ -18,9 +18,8 @@ const TeachersPage = () => {
 
   const [currentPage, setCurrentPage] = useState(1);
 
-  // 1) Filtrelenmiş öğretmen listesi
   const filteredTeachers = useMemo(() => {
-    const safeTeachers = teachers || []; // 🔹 Güvenli liste burada
+    const safeTeachers = teachers || []; 
     const { selectedLanguage, selectedLevel, selectedPrice } = filters;
 
     return safeTeachers.filter((teacher) => {
@@ -40,16 +39,13 @@ const TeachersPage = () => {
     });
   }, [teachers, filters]);
 
-  // 2) Sayfa sayısına göre gösterilecek öğretmenler (Load more)
   const currentTeachers = useMemo(() => {
     const end = currentPage * teachersPerPage;
     return filteredTeachers.slice(0, end);
   }, [filteredTeachers, currentPage]);
 
-  // 3) Daha fazla öğretmen var mı?
   const hasMoreTeachers = currentTeachers.length < filteredTeachers.length;
 
-  // Filtreler değişince filtre state'i güncelle + sayfayı 1'e al
   const handleFilter = useCallback((newFilters) => {
     setFilters(newFilters);
     setCurrentPage(1);
