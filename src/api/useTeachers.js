@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import { ref, onValue } from "firebase/database";
 import { db } from "./firebase";
+import { myTeacher } from "./deneme";
 
 const useTeachers = () => {
   const [teachers, setTeachers] = useState([]);
 
   useEffect(() => {
-    // 🔹 root'u dinle, çünkü veriler 0,1,2... olarak root altında
     const teachersRef = ref(db, "/");
 
     const unsubscribe = onValue(
@@ -16,22 +16,23 @@ const useTeachers = () => {
         console.log("Firebase teachers snapshot:", data);
 
         if (!data) {
-          setTeachers([]);
+          setTeachers([myTeacher]);
           return;
         }
 
-        // data büyük ihtimalle array; ama object olsa da çalışsın:
         const teachersArray = Array.isArray(data)
           ? data.map((teacher, index) => ({
               id: index,
-              ...teacher,
+              ...teacher
             }))
           : Object.entries(data).map(([id, teacher]) => ({
               id,
-              ...teacher,
+              ...teacher
             }));
 
-        setTeachers(teachersArray);
+        const extendedTeachers = [myTeacher, ...teachersArray];
+
+        setTeachers(extendedTeachers);
       },
       (error) => {
         console.error("Firebase teachers error:", error);
