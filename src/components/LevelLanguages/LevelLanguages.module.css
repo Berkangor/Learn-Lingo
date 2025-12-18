@@ -1,19 +1,33 @@
 .levelList {
     display: flex;
+    flex-wrap: wrap;
+    /* Taşma yapmaması için alt satıra geçiş izni */
     gap: 8px;
-}
-
-.levelList li:nth-child(1) {
-    background-color: var(--primary-color);
-    border: none;
+    /* Etiketler arasındaki profesyonel boşluk */
+    margin-top: 8px;
 }
 
 .levelItem {
-    border: 1px solid var(--main);
-    border-radius: 35px;
     padding: 8px 12px;
-    font-weight: 500;
+    background-color: transparent;
+    border: 1px solid rgba(18, 20, 23, 0.2);
+    /* Global stilindeki border rengine uygun */
+    border-radius: 35px;
+    /* Tam yuvarlak (pill) görünümü */
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+/* İlk seviyeyi (aktif olanı) öne çıkarmak veya hover efekti eklemek için */
+.levelItem:hover {
+    background-color: var(--primary-color);
+    /* Global değişkenindeki sarı */
+    border-color: var(--primary-color);
+}
+
+.levelItem p {
     font-size: 14px;
-    line-height: 114%;
-    margin-top: 32px;
+    font-weight: 500;
+    line-height: 1.14;
+    color: var(--main);
 }
