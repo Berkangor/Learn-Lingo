@@ -24,7 +24,6 @@ Proje; **React Router**, **Firebase Auth + Realtime Database**, **Formik/Yup** v
 - ✅ **Favoriler**
   - Giriş yapan kullanıcı için Firebase’e kaydedilir:
     - `users/{uid}/favorites/{teacherId}: true`
-  - Giriş yoksa favori tıklanınca uyarı modalı açılır
 
 - ✅ **Authentication**
   - Firebase Email/Password ile kayıt ol & giriş yap
