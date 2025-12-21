@@ -1,33 +1,41 @@
+/* Ana Sayfa Konteynerı */
 .teachersPageContainer {
     display: flex;
     flex-direction: column;
     padding-top: 40px;
     padding-bottom: 60px;
+
+    /* Arka planın tam sayfa olması için kritik ayarlar */
     min-height: 100vh;
+    width: 100%;
     background-color: #f8f8f8;
-    /* Hafif gri arka plan kartları öne çıkarır */
+
+    /* İçeriği yatayda ortalar (eğer .container class'ın genişlik vermiyorsa) */
+    margin: 0 auto;
+    box-sizing: border-box;
 }
 
-/* Filtreler ve Liste arasındaki boşluk */
-.teachersPageContainer> :global(.filters-wrapper) {
+/* Filtreler Bileşeni için Boşluk */
+/* Filters bileşeni render edildiğinde altına boşluk bırakır */
+.teachersPageContainer> :first-child {
     margin-bottom: 32px;
 }
 
 /* Daha Fazla Yükle Butonu */
 .btnMore {
     display: block;
-    margin: 40px auto 0 auto;
+    margin: 64px auto 0 auto;
+    /* Liste ile buton arası geniş boşluk */
     padding: 16px 48px;
     font-size: 18px;
     font-weight: 700;
     line-height: 1.5;
     color: #121417;
     background-color: #f4c550;
-    /* LearnLingo ana rengi */
     border: none;
     border-radius: 12px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btnMore:hover {
@@ -43,22 +51,38 @@
 /* Liste sonu uyarısı */
 .noMore {
     text-align: center;
-    margin-top: 40px;
+    margin-top: 48px;
     font-size: 16px;
     color: #8a8a89;
-    font-style: italic;
+    font-weight: 500;
+    padding: 20px;
+    border-top: 1px solid rgba(18, 20, 23, 0.05);
+}
+
+/* Ekranın en dış katmanındaki boşlukları sıfırlamak için (Global Reset) */
+:global(body) {
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    /* Beyaz boşluk kalmaması için şart */
 }
 
 /* Responsive Düzenlemeler */
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
     .teachersPageContainer {
-        padding-top: 20px;
+        padding-top: 24px;
         padding-bottom: 40px;
     }
 
     .btnMore {
-        width: 100%;
-        /* Mobilde butonu tam genişlik yap */
+        width: calc(100% - 32px);
+        /* Yanlardan pay bırakarak tam genişlik */
+        margin: 40px 16px 0 16px;
         padding: 14px;
+    }
+
+    .noMore {
+        margin-top: 32px;
+        font-size: 14px;
     }
 }

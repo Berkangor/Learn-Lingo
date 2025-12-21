@@ -4,11 +4,13 @@ import Header from "../../components/Header/Header";
 import TeachersList from "../../components/TeachersList/TeachersList";
 import css from "./TeachersPage.module.css";
 import useTeachers from "../../api/useTeachers";
+import { TeacherSkeleton } from "../../components/TeacherSkeleton/TeacherSkeleton"; 
 
 const teachersPerPage = 4;
 
 const TeachersPage = () => {
   const teachers = useTeachers(); 
+  const isLoading = !teachers || teachers.length === 0; 
 
   const [filters, setFilters] = useState({
     selectedLanguage: "All",
@@ -60,19 +62,27 @@ const TeachersPage = () => {
       <Header />
       <div className={`container ${css.teachersPageContainer}`}>
         <Filters onFilter={handleFilter} />
-        <TeachersList teachers={currentTeachers} />
-        {currentTeachers.length > 0 &&
-          (hasMoreTeachers ? (
-            <button
-              className={css.btnMore}
-              type="button"
-              onClick={handleLoadMore}
-            >
-              Load more
-            </button>
-          ) : (
-            <p className={css.noMore}>No more teachers.</p>
-          ))}
+        
+        {isLoading ? (
+          // Skeletonların alt alta düzgün durması için gap ekledik
+          <div style={{ display: 'flex', flexDirection: 'column', width: '100%', gap: '20px' }}>
+            {[...Array(4)].map((_, i) => <TeacherSkeleton key={i} />)}
+          </div>
+        ) : (
+          <>
+            <TeachersList teachers={currentTeachers} />
+            
+            {currentTeachers.length > 0 && (
+              hasMoreTeachers ? (
+                <button className={css.btnMore} onClick={handleLoadMore}>
+                  Load more
+                </button>
+              ) : (
+                <p className={css.noMore}>No more teachers.</p>
+              )
+            )}
+          </>
+        )}
       </div>
     </>
   );

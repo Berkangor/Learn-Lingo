@@ -5,10 +5,8 @@ import LogIn from "./LogIn/LogIn";
 const PrivateRoute = ({ children }) => {
   const { currentUser } = useAuth();
 
-  // İlk render'da kullanıcı yoksa modal açık başlasın
   const [isLogInOpen, setIsLogInOpen] = useState(() => !currentUser);
 
-  // Kullanıcı yoksa login bileşenini göster
   if (!currentUser) {
     return (
       <LogIn
@@ -18,7 +16,6 @@ const PrivateRoute = ({ children }) => {
     );
   }
 
-  // Kullanıcı varsa çocukları (korunan route içeriğini) göster
   return children;
 };
 

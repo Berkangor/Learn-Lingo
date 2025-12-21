@@ -1,4 +1,22 @@
 .favoritesPageContainer {
-    padding: 96px 128px;
+    padding-top: 40px;
+    padding-bottom: 60px;
+    min-height: 100vh;
     background-color: #f8f8f8;
+}
+
+.emptyState {
+    text-align: center;
+    margin-top: 100px;
+    color: #121417;
+}
+
+.emptyState h2 {
+    font-size: 28px;
+    margin-bottom: 12px;
+}
+
+.emptyState p {
+    color: #8a8a89;
+    font-size: 18px;
 }

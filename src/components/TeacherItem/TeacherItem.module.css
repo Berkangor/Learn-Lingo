@@ -1,74 +1,119 @@
 .item {
     display: flex;
     gap: 48px;
-
-    border-radius: 24px;
     padding: 24px;
+    background-color: #ffffff;
+    border-radius: 24px;
     position: relative;
-    background-color: #fff;
+    max-width: 1184px;
+    margin-bottom: 32px;
 }
 
+/* Sol taraftaki Avatar tasarımı */
 .avatar {
-    border: 3px solid #fbe9ba;
-    border-radius: 100px;
-    padding: 7px;
-    border-radius: 100px;
     width: 120px;
     height: 120px;
+    border-radius: 50%;
+    border: 3px solid #fbe9ba;
+    padding: 8px;
+    object-fit: cover;
+    flex-shrink: 0;
 }
 
-.littleTitle {
+/* İçerik alanı */
+.item>div {
+    flex-grow: 1;
+}
+
+.name {
+    font-size: 24px;
     font-weight: 500;
+    line-height: 1;
+    color: #121417;
+    margin-bottom: 32px;
+    margin-top: 8px;
+}
+
+/* Başlık ve açıklama etiketleri */
+.littleTitle {
     font-size: 16px;
-    line-height: 150%;
+    font-weight: 500;
+    line-height: 1.5;
     color: #8a8a89;
     margin-bottom: 8px;
 }
 
-.name {
-    font-weight: 500;
-    font-size: 24px;
-    line-height: 100%;
-    margin-bottom: 32px;
+.descrLanguages {
+    color: #121417;
+    text-decoration: underline;
 }
 
 .descr {
-    color: var(--main);
+    color: #121417;
+    font-weight: 400;
 }
 
-.descrLanguages {
-    color: var(--main);
-    text-decoration: underline;
-}
-
+/* Genişleyen içerik (Experience) */
 .experience {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #121417;
     margin-top: 16px;
     margin-bottom: 32px;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 150%;
 }
 
+/* Read More Butonu */
 .readMoreBtn {
-    font-weight: 500;
+    background: none;
+    border: none;
     font-size: 16px;
-    line-height: 150%;
+    font-weight: 500;
     text-decoration: underline;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    color: #121417;
+    cursor: pointer;
+    padding: 0;
+    margin-top: 16px;
+    transition: color 0.3s ease;
 }
 
 .readMoreBtn:hover {
-    transform: scale(1.1);
-    opacity: 0.9;
-    background-color: transparent;
+    color: #f4c550;
 }
 
+/* Book Trial Butonu */
 .bookTrialBtn {
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 156%;
-    border-radius: 12px;
     padding: 16px 48px;
-    background-color: var(--primary-color);
+    background-color: #f4c550;
+    color: #121417;
+    border: none;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 700;
     margin-top: 32px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.bookTrialBtn:hover {
+    background-color: #ffdc86;
+}
+
+/* Responsive Düzenlemeler */
+@media screen and (max-width: 768px) {
+    .item {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .avatar {
+        width: 96px;
+        height: 96px;
+        margin: 0 auto;
+    }
+
+    .bookTrialBtn {
+        width: 100%;
+        padding: 14px;
+    }
 }

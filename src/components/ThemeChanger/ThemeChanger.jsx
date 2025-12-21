@@ -55,7 +55,7 @@ export default function ThemeChanger({ setTheme }) {
             handleColorChange("#f0aa8d", "#f4c8ba", "/iMac/iMac-orange.svg")
           }
         ></button>
-        <p className={css.textTheme}>Change theme</p>
+        
       </div>
 
       <button className={css.closeBtn} onClick={() => setIsVisible(!isVisible)}>

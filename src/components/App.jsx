@@ -15,22 +15,38 @@ const FavoritesPage = lazy(() =>
 
 function App() {
  
-  return (
-    <div >
-      <Suspense fallback={<Loader />}>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/teachers" element={<TeachersPage />} />
-          <Route
-            path="/favorites"
-            element={
-              <PrivateRoute>
+ return (
+    <div>
+      <Routes>
+        <Route 
+          path="/" 
+          element={
+            <Suspense fallback={<Loader />}>
+              <HomePage />
+            </Suspense>
+          } 
+        />
+
+        <Route 
+          path="/teachers" 
+          element={
+            <Suspense fallback={null}>
+              <TeachersPage />
+            </Suspense>
+          } 
+        />
+
+        <Route
+          path="/favorites"
+          element={
+            <PrivateRoute>
+              <Suspense fallback={null}>
                 <FavoritesPage />
-              </PrivateRoute>
-            }
-          />
-        </Routes>
-      </Suspense>
+              </Suspense>
+            </PrivateRoute>
+          }
+        />
+      </Routes>
     </div>
   );
 }
