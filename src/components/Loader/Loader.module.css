@@ -119,7 +119,6 @@
     opacity: 0.9;
 }
 
-/* Küçük ekranlar için */
 @media (max-width: 480px) {
     .card {
         padding: 18px 22px;

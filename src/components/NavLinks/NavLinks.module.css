@@ -1,11 +1,9 @@
-/* Ana konteynerleri hizalamak için genel yapı */
 .nav {
     display: flex;
     gap: 28px;
     align-items: center;
 }
 
-/* Logo ve Metin Grubu */
 .navLogo {
     display: flex;
     align-items: center;
@@ -31,7 +29,6 @@
     letter-spacing: -0.02em;
 }
 
-/* Navigasyon Linkleri */
 .link,
 .activeLink {
     text-decoration: none;
@@ -43,19 +40,15 @@
     transition: color 0.3s ease;
 }
 
-/* Hover Efekti */
 .link:hover {
     color: #f4c550;
-    /* LearnLingo temasına uygun sarı tonu */
 }
 
-/* Aktif Link Durumu */
 .activeLink {
     color: #f4c550;
     font-weight: 500;
 }
 
-/* Aktif linkin altına küçük bir nokta veya çizgi eklemek istersen: */
 .activeLink::after {
     content: "";
     position: absolute;
@@ -68,7 +61,6 @@
     border-radius: 50%;
 }
 
-/* Responsive Ayarlar */
 @media (max-width: 768px) {
     .nav {
         gap: 15px;
@@ -76,6 +68,5 @@
 
     .logoText {
         display: none;
-        /* Mobilde sadece ikon kalsın dersen */
     }
 }

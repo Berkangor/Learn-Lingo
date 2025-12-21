@@ -64,7 +64,6 @@ const TeachersPage = () => {
         <Filters onFilter={handleFilter} />
         
         {isLoading ? (
-          // Skeletonların alt alta düzgün durması için gap ekledik
           <div style={{ display: 'flex', flexDirection: 'column', width: '100%', gap: '20px' }}>
             {[...Array(4)].map((_, i) => <TeacherSkeleton key={i} />)}
           </div>

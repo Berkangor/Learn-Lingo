@@ -2,14 +2,12 @@
 .heroContainer {
     display: grid;
     grid-template-columns: 1.2fr 1fr;
-    /* Metin alanı görsele göre biraz daha geniş */
     gap: 24px;
     align-items: stretch;
     margin-top: 20px;
     max-height: 530px;
 }
 
-/* Sol taraf: İçerik Alanı */
 .firstContainer {
     background-color: #f8f8f8;
     padding: 60px;
