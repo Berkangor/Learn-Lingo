@@ -1,16 +1,58 @@
-# React + Vite
+# LearnLingo (React + Vite + Firebase)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+LearnLingo; öğretmenleri listeleyebildiğin, filtreleyebildiğin ve giriş yaptıktan sonra öğretmenleri favoriye ekleyebildiğin bir React uygulamasıdır.  
+Proje; **React Router**, **Firebase Auth + Realtime Database**, **Formik/Yup** ve **CSS Modules** ile geliştirilmiştir.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Özellikler
 
-## React Compiler
+- ✅ **Sayfalar (Route)**
+  - `/` Home
+  - `/teachers` Öğretmen listesi + filtreleme + “Load more”
+  - `/favorites` **Korumalı sayfa (PrivateRoute)** – sadece giriş yapan kullanıcı görür
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- ✅ **Öğretmen listeleme**
+  - Firebase Realtime Database’den öğretmenleri çeker
+  - Listeyi sayfalama mantığıyla parça parça gösterir (Load more)
 
-## Expanding the ESLint configuration
+- ✅ **Filtreleme**
+  - Dil (Language)
+  - Seviye (Level)
+  - Maksimum fiyat (Price)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- ✅ **Favoriler**
+  - Giriş yapan kullanıcı için Firebase’e kaydedilir:
+    - `users/{uid}/favorites/{teacherId}: true`
+  - Giriş yoksa favori tıklanınca uyarı modalı açılır
+
+- ✅ **Authentication**
+  - Firebase Email/Password ile kayıt ol & giriş yap
+  - Header üzerinden Login / Registration / Logout modalları
+
+- ✅ **UI**
+  - Route-level loader (Suspense fallback)
+  - Toast bildirimleri (react-hot-toast)
+  - Theme seçimi ve localStorage ile kalıcılık
+
+---
+
+## Kullanılan Teknolojiler
+
+- React + Vite
+- React Router DOM
+- Firebase (Auth + Realtime Database)
+- Formik + Yup (form & validation)
+- react-hot-toast
+- CSS Modules
+- modern-normalize
+
+---
+
+## Kurulum
+
+### 1) Projeyi çalıştırma
+
+```bash
+npm install
+npm run dev
